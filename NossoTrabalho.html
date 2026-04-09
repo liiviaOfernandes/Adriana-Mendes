@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<title>Adriana Mendes Fotografia</title>
+
+<style>
+    @font-face {
+  font-family: 'Nicholas';
+  src: url('Nicholas.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Caviar Dreams';
+  src: url('CaviarDreams.ttf') format('truetype');
+  font-weight: 700;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Caviar Dreams', serif;
+}
+
+body {
+  background: linear-gradient(135deg, #c7855cc2, #8c5a2b);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 420px;
+  width: 100%;
+}
+
+/* header */
+.header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.header img {
+  width: 60px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+.header img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* CARD TOPO COM IMAGEM */
+.top-card {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.top-card img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* OVERLAY ESCURO SUAVE */
+.overlay {
+  position: absolute;
+  inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.2));
+}
+
+/* CONTEÚDO SOBRE A IMAGEM */
+.top-content {
+  position: absolute;
+  bottom: 265px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+/* NOME (estilo fino e elegante) */
+.top-content h2 {
+  font-size: 26px;
+  font-weight: 300;
+  font-family: 'Nicholas', serif;
+  margin-bottom: 5px;
+}
+
+/* TEXTO */
+.top-content p {
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+/* STATS */
+.stats {
+     position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+}
+
+.stat strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat span {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.linha {
+   width: 1px;
+  height: 35px;
+  margin: 15px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+}
+
+
+/* BOTÕES COM IMAGEM */
+.link-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.link-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.link-card span {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* SOBRE */
+.about-clean {
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* TEXTO */
+.about-text {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.about-text h2 {
+  font-family: 'Nicholas', serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.about-text p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* IMAGEM */
+.about-img img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+/* BOTÃO FINAL */
+.cta {
+  margin-top: 20px;
+}
+
+.cta button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #7a4b1f;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* CARD SERVIÇOS */
+.quadros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  color: #333;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* HOVER CHIQUE */
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* IMAGEM */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* TEXTO */
+.card h3 {
+  font-size: 18px;
+  padding: 10px 10px 0;
+  font-weight: bold;
+  font-family: 'Caviar Dreams', serif;
+}
+
+.card p {
+  font-size: 12px;
+  padding: 5px 10px 15px;
+  line-height: 1.4;
+}
+
+/*modal*/
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 320px;
+}
+
+.modal-box input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.modal-box button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #532618;
+  color: white;
+  border-radius: 10px;
+}
+
+.fechar {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  max-width: 420px;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.footer a {
+  color: #f2d3a1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html">
+    <img src="Mendes (1).png" alt="Logo Adriana Mendes">
+  </a>
+</header>
+
+<div class="container">
+  <!-- TOPO -->
+  <div class="top-card">
+    <img src="estudio.jpg">
+    <div class="overlay"></div>
+
+    <div class="top-content">
+      <h2 style="font-family: Caviar Dreams;">Nosso <br> Estúdio</h2>
+      <p> Viva para sempre <br> através da <br> fotografia. </p>
+    </div>
+    
+    <div class="stats">
+        <div class="stat">
+            <strong>Nossos </strong>
+            <span>Trabalhos!</span>
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="stat">
+            <strong>Maior estúdio</strong>
+            <span>de luz natural da região..</span>
+         </div>
+
+        <div class="linha"></div>
+
+        <div class="stat">
+            <strong>New Born</strong>
+        </div>
+    </div>
+
+</div>
+
+<!-- Serviços -->
+<div class="quadros">
+
+  <div class="card" onclick="abrirModal('New Born')">
+    <img src="newborn.jpg">
+    <h3>New Born</h3>
+    <p>Ensaio para recém-nascidos</p>
+  </div>
+
+  <div class="card" onclick="abrirModal('Gestante')">
+    <img src="gestante.jpeg">
+    <h3>Gestante</h3>
+    <p>Ensaio para gestantes</p>
+  </div>
+
+  <div class="card" onclick="abrirModal('Família')">
+    <img src="familia.jpg">
+    <h3>Família</h3>
+    <p>Ensaio para famílias</p>
+  </div>
+
+  <div class="card" onclick="abrirModal('Formatura')">
+    <img src="formatura.jpg">
+    <h3>Formatura</h3>
+        <p>Ensaio para formandos...</p>
+    </div>
+
+    <div class="card" onclick="abrirModal('Batizado')">
+    <img src="batizado.jpeg">
+    <h3>Batizado</h3>
+        <p>Cobertura da celebração do batismo do seu pequeno!</p>
+    </div>
+
+    <div class="card" onclick="abrirModal('Acompanhamento')">
+    <img src="acompanhamento.jpg">
+    <h3>Acom<br>panha<br>mento</h3>
+        <p>Todas as fases são lindas e apaixonantes!</p>
+    </div>
+
+</div>
+
+<!-- modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+
+    <span class="fechar" onclick="fecharModal()">×</span>
+
+    <h2 id="tituloServico"></h2>
+
+    <input type="text" id="nome" placeholder="Seu nome">
+    <input type="text" id="servico" readonly>
+
+    <button onclick="enviar()">Agendar pelo WhatsApp</button>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+function abrirModal(servico){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("servico").value = servico;
+  document.getElementById("tituloServico").innerText = servico;
+}
+
+function fecharModal(){
+  document.getElementById("modal").style.display = "none";
+}
+
+function enviar(){
+  const nome = document.getElementById("nome").value;
+  const servico = document.getElementById("servico").value;
+
+  const msg = `Olá! Sou a ${nome} e gostaria de fazer um orçamento para o serviço de ${servico}.`;
+  const numero = "5534991929340";
+
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`);
+}
+</script>
+
+<footer class="footer">
+  <p>
+   Criado com 🤍 por <a href="https://www.instagram.com/liviafernandes.jpg/">@liviafernandes</a>
+  </p>
+</footer>
+
+</body>
+</html>
+
+ 

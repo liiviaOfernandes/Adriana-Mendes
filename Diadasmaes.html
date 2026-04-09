@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<title>Dia das Mães 2026 - Adriana Mendes Fotografia</title>
+
+<style>
+    @font-face {
+  font-family: 'Nicholas';
+  src: url('Nicholas.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Caviar Dreams';
+  src: url('CaviarDreams.ttf') format('truetype');
+  font-weight: 700;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Caviar Dreams', serif;
+}
+
+body {
+  background: linear-gradient(135deg, #2b0f14, #5a1e2a);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 420px;
+  width: 100%;
+}
+
+/* header */
+.header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.header img {
+  width: 60px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+.header img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+/* CARD TOPO COM IMAGEM */
+.top-card {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.top-card video {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY ESCURO SUAVE */
+.overlay {
+   position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(68, 6, 13, 0.85),
+    rgba(36, 8, 11, 0.3),
+    transparent
+  );
+}
+
+/* CONTEÚDO SOBRE A IMAGEM */
+.top-content {
+  position: absolute;
+  bottom: 265px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+/* NOME (estilo fino e elegante) */
+.top-content h2 {
+  font-size: 26px;
+  font-weight: 300;
+  font-family: 'Nicholas', serif;
+  margin-bottom: 5px;
+}
+
+/* TEXTO */
+.top-content p {
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+
+
+/* STATS */
+.stats {
+     position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+}
+
+.stat strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stat span {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.linha {
+   width: 1px;
+  height: 35px;
+  margin: 15px 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+}
+
+
+/* BOTÕES COM IMAGEM */
+.link-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.link-card img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}
+
+.link-card span {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* SOBRE */
+.about {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+    background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.about-text {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.about-text h3 {
+  margin-bottom: 5px;
+}
+
+/* BOTÃO FINAL */
+.cta {
+  margin-top: 20px;
+}
+
+.cta button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #7a4b1f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FORMULÁRIO */
+.forms-container {
+  max-width: 420px;
+  width: 100%;
+  padding: 2rem 2px;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 25px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* TÍTULO */
+h2 {
+  text-align: center;
+  font-family: caviar dreams, serif;
+   margin-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #7a1f2f;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  max-width: 420px;
+  text-align: right;
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.footer a {
+  color: #f2d3a1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+  <header class="header">
+  <a href="index.html">
+    <img src="Mendes (1).png" alt="Logo Adriana Mendes">
+  </a>
+</header>
+
+<div class="container">
+  <!-- TOPO -->
+  <div class="top-card">
+    <video autoplay muted loop playsinline>
+    <source src="Mendes.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+
+  <div class="overlay"></div>
+    
+    <div class="stats">
+        <div class="stat">
+            <strong>MÃES 2026</strong>
+            <span>Agenda Aberta!</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- SOBRE -->
+  <div class="about">
+    <img src="DIADASMAES2.jpeg">
+
+    <div class="about-text">
+    <h2>Sessões Especiais <BR> Dia Das Mães</h2>
+    <p>
+    Ser mãe é ser abrigo. <BR>
+    É ser colo nos dias difíceis, sorriso nos dias leves, força quando falta chão.
+    É estar presente nos detalhes, nos gestos simples e nos momentos que, sem perceber, se tornam eternos.
+
+    O tempo faz a única coisa que se espera dele: passar.
+    E é por isso que cada fase merece ser vivida, celebrada e guardada com carinho.
+<BR>
+  <br>
+De 16 a 26 de abril, o Estúdio Adriana Mendes convida 
+<br> você para viver uma experiência única com as 
+<br>Sessões Especiais de Dia das Mães, com o tema: <strong>“Sou mãe, sou abrigo.”</strong>
+<br>
+<br>
+Mais do que fotos, são memórias. <br>
+Mais do que registros, são sentimentos eternizados.
+<br>
+<br>
+<strong>Celebre. Eternize. Viva. </strong>
+      </p>
+    </div>
+  </div>
+
+
+
+  <!-- LINKS -->
+  <div class="forms-container">
+  <div class="card">
+
+    <h2>Agendamento Dia das Mães</h2>
+
+    <div class="input-group">
+      <label>Nome completo</label>
+      <input type="text" id="nome" required>
+    </div>
+
+    <div class="input-group">
+      <label>Data de preferência</label>
+      <select id="data">
+        <option value="">Selecione</option>
+        <option>16 de Abril</option>
+        <option>17 de Abril</option>
+        <option>18 de Abril</option>
+        <option>19 de Abril</option>
+        <option>20 de Abril</option>
+        <option>21 de Abril</option>
+        <option>22 de Abril</option>
+        <option>23 de Abril</option>
+        <option>24 de Abril</option>
+        <option>25 de Abril</option>
+        <option>26 de Abril</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Horário de preferência</label>
+      <select id="horario">
+        <option value="">Selecione</option>
+        <option>Manhã</option>
+        <option>Tarde</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Quantas pessoas?</label>
+      <input type="number" id="pessoas" min="1">
+    </div>
+
+    <button onclick="enviar()">Verificar reserva via WhatsApp</button>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+function enviar(){
+  const nome = document.getElementById("nome").value;
+  const data = document.getElementById("data").value;
+  const horario = document.getElementById("horario").value;
+  const pessoas = document.getElementById("pessoas").value;
+
+  if(!nome || !data || !horario || !pessoas){
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  const mensagem = 
+`Olá! Sou ${nome} gostaria de agendar meu ensaio de Dia das Mães, 
+tenho preferência da  data ${data} no período da
+ ${horario} para ${pessoas} pessoas. Tem disponibilidade?`;
+
+  const numero = "553491929340"; // 🔥 COLOQUE SEU NÚMERO AQUI
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank");
+}
+
+</script>
+
+<footer class="footer">
+  <p>
+   Criado com 🤍 por <a href="https://www.instagram.com/liviafernandes.jpg/">@liviafernandes</a>
+  </p>
+</footer>
+
+</body>
+</html>

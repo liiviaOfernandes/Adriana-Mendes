@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendamento Dia das Mães</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a0a0d, #4b0f1c, #7a1f2f);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+}
+
+.container {
+  max-width: 420px;
+  width: 100%;
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 25px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* TÍTULO */
+h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: white;
+  color: #7a1f2f;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <h2>Agendamento Dia das Mães</h2>
+
+    <div class="input-group">
+      <label>Nome completo</label>
+      <input type="text" id="nome" required>
+    </div>
+
+    <div class="input-group">
+      <label>Data preferencial</label>
+      <select id="data">
+        <option value="">Selecione</option>
+        <option>16 de Abril</option>
+        <option>17 de Abril</option>
+        <option>18 de Abril</option>
+        <option>19 de Abril</option>
+        <option>20 de Abril</option>
+        <option>21 de Abril</option>
+        <option>22 de Abril</option>
+        <option>23 de Abril</option>
+        <option>24 de Abril</option>
+        <option>25 de Abril</option>
+        <option>26 de Abril</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Horário de preferência</label>
+      <select id="horario">
+        <option value="">Selecione</option>
+        <option>Manhã</option>
+        <option>Tarde</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Quantas pessoas?</label>
+      <input type="number" id="pessoas" min="1">
+    </div>
+
+    <button onclick="enviar()">Enviar pedido via WhatsApp</button>
+
+  </div>
+</div>
+
+<script>
+function enviar(){
+  const nome = document.getElementById("nome").value;
+  const data = document.getElementById("data").value;
+  const horario = document.getElementById("horario").value;
+  const pessoas = document.getElementById("pessoas").value;
+
+  if(!nome || !data || !horario || !pessoas){
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  const mensagem = 
+`Olá! Quero agendar meu ensaio de Dia das Mães 💐
+
+Nome: ${nome}
+Data: ${data}
+Horário: ${horario}
+Pessoas: ${pessoas}`;
+
+  const numero = "5599999999999"; // 🔥 COLOQUE SEU NÚMERO AQUI
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
